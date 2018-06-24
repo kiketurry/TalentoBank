@@ -6,12 +6,15 @@ import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.ProgressBar;
+import android.widget.Switch;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import es.kiketurry.talentobank.R;
 import es.kiketurry.talentobank.domain.models.AccountModel;
-import es.kiketurry.talentobank.domain.models.AccountsListModel;
 import es.kiketurry.talentobank.ui.base.BaseActivity;
 import io.reactivex.functions.Consumer;
 
@@ -23,6 +26,8 @@ public class AccountsListActivity extends BaseActivity<AccountsListPresenter> im
     RecyclerView rvAccountsList;
     @BindView(R.id.progress_bar)
     ProgressBar progressBar;
+    @BindView(R.id.swShowHiddenAccount)
+    Switch swShowHiddenAccount;
     
     RecyclerView.LayoutManager layoutManager;
     AccountsListAdapter accountsListAdapter;
@@ -49,6 +54,12 @@ public class AccountsListActivity extends BaseActivity<AccountsListPresenter> im
         
         accountsListAdapter = new AccountsListAdapter(this, actionClickAccount);
         rvAccountsList.setAdapter(accountsListAdapter);
+    
+        swShowHiddenAccount.setChecked(false);
+    
+        swShowHiddenAccount.setOnCheckedChangeListener((compoundButton, b) -> {
+            presenter.showHidden(swShowHiddenAccount.isChecked());
+        });
     }
     
     private void configureActionbar() {
@@ -67,8 +78,8 @@ public class AccountsListActivity extends BaseActivity<AccountsListPresenter> im
     }
     
     @Override
-    public void showSuperHeroes(AccountsListModel accountsListModel) {
-        accountsListAdapter.addAccounts(accountsListModel.getAccounts());
+    public void showAccounts(List<AccountModel> accountModels) {
+        accountsListAdapter.addAccounts(new ArrayList<>(accountModels));
     }
     
     @Override

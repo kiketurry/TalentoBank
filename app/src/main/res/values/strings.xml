@@ -2,4 +2,11 @@
     <string name="app_name">TalentoBank</string>
     <string name="title_actionbar_list_activity">Listado de Cuentas</string>
     <string name="problem_download_accounts">Lo sentimos, el banco no esta operativo, inténtelo de nuevo más tarde.</string>
+    <string name="show_hidden_accounts">Mostrar cuentas ocultas</string>
+
+    <string name="acount_name"><![CDATA[Nombre: <b>%1$s</b>]]></string>
+    <string name="acount_alias"><![CDATA[Alias: <b>%1$s</b>]]></string>
+    <string name="acount_iban"><![CDATA[IBAN: <b>%1$s</b>]]></string>
+    <string name="acount_balance"><![CDATA[Saldo: <b>%.2f %2$s</b>]]></string>
+    <string name="acount_type"><![CDATA[Tipo Cuenta: <b>%1$s</b>]]></string>
 </resources>

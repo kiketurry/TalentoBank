@@ -4,10 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <RelativeLayout
+        android:id="@+id/rlShowAllAccounts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:text="@string/show_hidden_accounts"/>
+
+        <Switch
+            android:id="@+id/swShowHiddenAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"/>
+
+    </RelativeLayout>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rv_accounts_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/rlShowAllAccounts"
         android:scrollbars="vertical"/>
 
     <ProgressBar

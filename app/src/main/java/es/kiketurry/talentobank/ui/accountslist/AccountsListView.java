@@ -1,6 +1,8 @@
 package es.kiketurry.talentobank.ui.accountslist;
 
-import es.kiketurry.talentobank.domain.models.AccountsListModel;
+import java.util.List;
+
+import es.kiketurry.talentobank.domain.models.AccountModel;
 
 public interface AccountsListView {
     
@@ -8,7 +10,7 @@ public interface AccountsListView {
     
     void hideLoading();
     
-    void showSuperHeroes(AccountsListModel accountsListModel);
+    void showAccounts(List<AccountModel> accountModels);
     
     void showProblem(String message);
 }

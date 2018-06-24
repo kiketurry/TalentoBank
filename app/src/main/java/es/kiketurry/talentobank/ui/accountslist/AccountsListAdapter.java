@@ -2,6 +2,7 @@ package es.kiketurry.talentobank.ui.accountslist;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,8 +31,14 @@ public class AccountsListAdapter extends RecyclerView.Adapter<AccountsListAdapte
         LinearLayout llContentAccount;
         @BindView(R.id.tvName)
         TextView tvName;
+        @BindView(R.id.tvAlias)
+        TextView tvAlias;
         @BindView(R.id.tvIban)
         TextView tvIban;
+        @BindView(R.id.tvBalance)
+        TextView tvBalance;
+        @BindView(R.id.tvType)
+        TextView tvType;
         
         public AccountViewHolder(View view) {
             super(view);
@@ -53,8 +60,12 @@ public class AccountsListAdapter extends RecyclerView.Adapter<AccountsListAdapte
     @Override
     public void onBindViewHolder(AccountViewHolder accountViewHolder, int position) {
         AccountModel accountModel = accountModels.get(position);
-        accountViewHolder.tvName.setText(accountModel.getAccountName());
-        accountViewHolder.tvIban.setText(accountModel.getIban());
+        accountViewHolder.tvName.setText(Html.fromHtml(String.format(context.getString(R.string.acount_name), accountModel.getAccountName())));
+        accountViewHolder.tvAlias.setText(Html.fromHtml(String.format(context.getString(R.string.acount_alias), accountModel.getAlias())));
+        accountViewHolder.tvIban.setText(Html.fromHtml(String.format(context.getString(R.string.acount_iban), accountModel.getIban())));
+        accountViewHolder.tvBalance.setText(Html.fromHtml(String.format(context.getString(R.string.acount_balance), ((double) accountModel.getAccountBalanceInCents()) / 100d, accountModel.getAccountCurrency())));
+        accountViewHolder.tvType.setText(Html.fromHtml(String.format(context.getString(R.string.acount_name), accountModel.getAccountType())));
+        
         accountViewHolder.llContentAccount.setOnClickListener(view -> {
             try {
                 actionClickAccount.accept(accountModel);
