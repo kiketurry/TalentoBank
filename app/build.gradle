@@ -47,7 +47,7 @@ android {
             dimension "default"
             applicationId "es.kiketurry.talentobank.mock"
             packageName = "es.kiketurry.talentobank.mock"
-            resValue "string", "app_name_flavor", "Talento Bank MOCK"
+            resValue "string", "app_name_flavor", "Talento MOCK Bank"
         }
     }
 
