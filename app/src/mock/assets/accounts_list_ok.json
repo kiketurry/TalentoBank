@@ -1,0 +1,66 @@
+{
+  "accounts": [
+    {
+      "accountBalanceInCents": 10000,
+      "accountCurrency": "EUR",
+      "accountId": 123456,
+      "accountName": "Cuenta 123",
+      "accountNumber": "T 36573543254",
+      "accountType": "Ahorro",
+      "alias": "Hucha",
+      "isVisible": true,
+      "iban": "ES23 2342 2342 2343"
+    },
+    {
+      "accountBalanceInCents": 45000,
+      "accountCurrency": "EUR",
+      "accountId": 789456,
+      "accountName": "Transferencias",
+      "accountNumber": "Y 748757732",
+      "accountType": "Pagos",
+      "alias": "Pagos",
+      "isVisible": false,
+      "iban": "ES23 2345 3463 2345"
+    },
+    {
+      "accountBalanceInCents": 100,
+      "accountCurrency": "EUR",
+      "accountId": 783243560,
+      "accountName": "Cuenta Nómina",
+      "accountNumber": "H 7894567521",
+      "accountType": "NORMAL",
+      "alias": "Cuenta del día a día",
+      "isVisible": true,
+      "iban": "ES25 2343 2342 1234"
+    },
+    {
+      "accountBalanceInCents": 0,
+      "accountCurrency": "EUR",
+      "accountId": 657422,
+      "accountName": "Cuenta Ahorro",
+      "accountNumber": "R 748757732",
+      "accountType": "PAGOS",
+      "alias": "Pareja",
+      "isVisible": false,
+      "iban": "ES23 9574 3947 3297"
+    },
+    {
+      "accountBalanceInCents": 500000,
+      "accountCurrency": "EUR",
+      "accountId": 2345346352,
+      "accountName": "Cuenta Ahorro",
+      "accountNumber": "O 29348765",
+      "accountType": "AHORRO",
+      "alias": "Fiesta",
+      "iban": "",
+      "isVisible": true,
+      "linkedAccountId": 748757694,
+      "productName": "PAGOS",
+      "productType": "2345",
+      "savingsTargetReached": 1,
+      "targetAmountInCents": 2000
+    }
+  ],
+  "failedAccountTypes": "CREDITCARDS",
+  "returnCode": "OK"
+}

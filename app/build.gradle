@@ -12,6 +12,8 @@ buildscript {
     }
 }
 
+def packageName
+
 android {
     compileSdkVersion 27
     defaultConfig {
@@ -23,6 +25,30 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         buildConfigField("String", "TALENTO_BANK_API_URL", '"https://api.myjson.com/"')
+    }
+
+    flavorDimensions "default"
+
+    productFlavors {
+
+        pro {
+
+            versionNameSuffix "-internet"
+
+            dimension "default"
+            applicationId "es.kiketurry.talentobank"
+            packageName = "es.kiketurry.talentobank"
+            resValue "string", "app_name_flavor", "Talento Bank"
+        }
+
+        mock {
+            versionNameSuffix "-mocked"
+
+            dimension "default"
+            applicationId "es.kiketurry.talentobank.mock"
+            packageName = "es.kiketurry.talentobank.mock"
+            resValue "string", "app_name_flavor", "Talento Bank MOCK"
+        }
     }
 
     buildTypes {
