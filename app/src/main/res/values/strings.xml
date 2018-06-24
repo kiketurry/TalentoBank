@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">TalentoBank</string>
+    <string name="title_actionbar_list_activity">Listado de Cuentas</string>
+    <string name="problem_download_accounts">Lo sentimos, el banco no esta operativo, inténtelo de nuevo más tarde.</string>
 </resources>
