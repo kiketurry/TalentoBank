@@ -9,6 +9,8 @@ import java.io.InputStream;
 
 import es.kiketurry.talentobank.TalentoBankApplication;
 import es.kiketurry.talentobank.data.repository.DataSource;
+import es.kiketurry.talentobank.data.repository.remote.entities.AccountsListEntity;
+import es.kiketurry.talentobank.data.repository.remote.mappers.AccountsListMapper;
 import es.kiketurry.talentobank.domain.models.AccountsListModel;
 import io.reactivex.Observable;
 import io.reactivex.Observer;
@@ -25,8 +27,9 @@ public class RemoteDataSource implements DataSource {
     public Observable<AccountsListModel> listAccounts() {
         
         String json = readJSONFromAsset("accounts_list_ok.json");
-        
-        AccountsListModel accountsListModel = new Gson().fromJson(json, AccountsListModel.class);
+
+        AccountsListEntity accountsListEntity = new Gson().fromJson(json, AccountsListEntity.class);
+        AccountsListModel accountsListModel = new AccountsListMapper().fromResponse(accountsListEntity);
         
         return new Observable<AccountsListModel>() {
             @Override
